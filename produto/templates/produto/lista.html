@@ -15,7 +15,8 @@
 
                 {% if produto.imagem %}
                 <a href="{% url 'produto:detalhe' produto.slug %}">
-                    <img class="card-img-top" src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+                    <img class="card-img-top" src="{{ produto.imagem.url }}"
+                        alt="{{ produto.nome }}">
                 </a>
                 {% endif %}
 
@@ -26,7 +27,8 @@
 
                         {% if produto.preco_marketing_promocional %}
                         <span class="product-price">
-                            {{ produto.preco_marketing_promocional|formata_preco }}
+                            {{ produto.preco_marketing_promocional|formata_preco
+                            }}
                         </span>
                         <span class="product-old-price text-muted">
                             {{ produto.preco_marketing|formata_preco }}
@@ -39,8 +41,10 @@
 
                     </div>
                 </div>
-                <div class="card-footer bg-transparent border-top-light-custom text-center">
-                    <a href="{% url 'produto:detalhe' produto.slug %}" class="btn btn-primary btn-sm m-1 btn-block">
+                <div
+                    class="card-footer bg-transparent border-top-light-custom text-center">
+                    <a href="{% url 'produto:detalhe' produto.slug %}"
+                        class="btn btn-primary btn-sm m-1 btn-block">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         Comprar
                     </a>
@@ -48,10 +52,6 @@
             </div>
 
             {% endfor %}
-
-
-
-
 
         </div>
     </div>

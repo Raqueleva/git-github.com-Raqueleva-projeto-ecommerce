@@ -14,15 +14,18 @@
         {% for linha in carrinho.values %}
         <tr>
             <td class="d-none d-lg-block">
-                <img class="cart-img" src="{% get_media_prefix %}{{ linha.imagem }}">
+                <img class="cart-img"
+                    src="{% get_media_prefix %}{{ linha.imagem }}">
             </td>
             <td>
                 <a href="{% url 'produto:detalhe' linha.slug %}">
                     {{ linha.produto_nome }}
                 </a>
 
-                <a class="ml-3" href="{% url 'produto:removerdocarrinho' %}?vid={{ linha.variacao_id }}">
-                    <i class="fas fa-times-circle text-danger" aria-hidden="true"></i>
+                <a class="ml-3"
+                    href="{% url 'produto:removerdocarrinho' %}?vid={{ linha.variacao_id }}">
+                    <i class="fas fa-times-circle text-danger"
+                        aria-hidden="true"></i>
                 </a>
             </td>
             <td>{{ linha.variacao_nome }}</td>
@@ -43,7 +46,6 @@
 
         </tr>
         {% endfor %}
-
 
     </table>
 </div>

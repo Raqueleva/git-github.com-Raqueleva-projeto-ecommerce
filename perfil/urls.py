@@ -9,9 +9,3 @@ urlpatterns = [
     path('login/', views.Login.as_view(), name='login'),
     path('logout/', views.Logout.as_view(), name='logout'),
 ]
-
-# urlpatterns = [
-#     path('perfil/', views.perfil, name='perfil'),
-#     path('<slug>/', views.detalhe, name='detalhe'),
-#     path('lista/', views.lista, name='lista'),
-# ]

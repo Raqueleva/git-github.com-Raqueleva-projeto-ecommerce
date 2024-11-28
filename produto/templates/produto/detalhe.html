@@ -20,10 +20,12 @@
             <p class="lead">{{ produto.descricao_curta }}</p>
             <p class="lead">
                 {% if produto.preco_marketing_promocional %}
-                <span id="variation-preco-promocional" class="lead product-price">
+                <span id="variation-preco-promocional"
+                    class="lead product-price">
                     {{ produto.preco_marketing_promocional|formata_preco }}
                 </span>
-                <span id="variation-preco" class="lead product-old-price text-muted">
+                <span id="variation-preco"
+                    class="lead product-old-price text-muted">
                     {{ produto.preco_marketing|formata_preco }}
                 </span>
                 {% else %}
@@ -33,9 +35,11 @@
                 {% endif %}
             </p>
 
-            <form action="{% url 'produto:adicionaraocarrinho' %}" id="form-add-to-cart">
+            <form action="{% url 'produto:adicionaraocarrinho' %}"
+                id="form-add-to-cart">
                 <div class="form-group">
-                    <select id="select-variacoes" name="vid" class="form-control form-control-lg">
+                    <select id="select-variacoes" name="vid"
+                        class="form-control form-control-lg">
                         {% for variacao in produto.variacao_set.all %}
 
                         {% if variacao.preco_promocional %}
@@ -49,7 +53,8 @@
                             {% endif %}
                         </option>
                         {% else %}
-                        <option data-preco="{{ variacao.preco|formata_preco }}" value="{{ variacao.id }}">
+                        <option data-preco="{{ variacao.preco|formata_preco }}"
+                            value="{{ variacao.id }}">
                             {% if variacao.nome %}
                             {{ variacao.nome }}
                             {% else %}
@@ -63,14 +68,14 @@
                 </div>
 
                 <div class="text-left">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                    <button type="submit"
+                        class="btn btn-primary btn-lg btn-block">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         Adicionar ao carrinho
                     </button>
                 </div>
 
             </form>
-
 
         </div>
     </div>
@@ -84,6 +89,5 @@
         </div>
     </div>
 </div>
-
 
 {% endblock %}
